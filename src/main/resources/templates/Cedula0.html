@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  	<!-- Compiled and minified JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  	
+	<title>Cedula 0</title>
+	 <style>
+        	.hedFont{
+        		background: #2E4053;
+        	}
+        	.fonfohead{
+			background: #10AE8F;
+			color:#075B52;
+			padding: .15%;
+		}
+        </style>
+</head>
+<body>
+	<nav class="nav-extended">
+    <div class="nav-wrapper hedFont">
+      <a href="#!" class="brand-logo">Sireev</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a>Inicio</a></li>
+        <li><a>Acerca de</a></li>
+        <li><a>Cédulas</a></li>
+      </ul>
+    </div>
+    <div class="nav-content fonfohead">
+      <center><h5>Cédula 0 - Currículum Vitae Resumido</h5></center>
+      <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
+        <i class="material-icons">add</i>
+      </a> -->
+    </div>
+    <!--
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#test1">Test 1</a></li>
+        <li class="tab"><a class="active" href="#test2">Test 2</a></li>
+        <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
+        <li class="tab"><a href="#test4">Test 4</a></li>
+      </ul>
+    </div>-->
+  </nav>
+  <!-- termina header -->
+  <div class="container center aling">
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s4">
+            <i class="material-icons prefix">mode_edit</i>
+              <input id="icon_prefix" type="text" class="validate">
+            <label for="icon_prefix">Número de Profesor</label>
+          </div>
+          <div class="col s3 btnn">
+                  <br>
+                  <a class="waves-effect waves-light btn" id="botonSave"><i class="material-icons left">save</i>Guardar</a>
+          </div>
+
+          <div class="col s3 btnn">
+               <br>
+              <a class="waves-effect waves-light btn"><i class="material-icons left">import_export</i>Generar Cédula</a>
+          </div>
+        </div>
+      </form>
+    </div>
+      
+  
+  <ul class="collapsible popout">
+    <li>
+        <div class="collapsible-header"><i class="material-icons">filter_drama</i>Datos Generales</div>
+        <div class="collapsible-body">
+            <div class="row">
+                <table class="responsive-table striped">
+                    <thead>
+                            <tr>
+                                <th width="30%"><center>Apellido Paterno</center></th>
+                                    <th width="30%"><center>Apellido Materno</center></th>
+                                    <th width="30%"><center>Nombre(s)</center></th>
+
+                            </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input  id="apellidoPat" type="text" class="validate"/>
+                            </td>
+                            <td>
+                                <input  id="apellidoMat" type="text" class="validate"/>
+                            </td>
+                            <td>
+                                <input  id="nombres" type="text" class="validate"/>
+                            </td>
+                        </tr>
+                    </tbody>
+
+              </table>
+             
+          </div>
+            <div class="row">
+                <table class="responsive-table striped">
+                    <thead>
+                            <tr>
+                                    <th width="10%"><center>Edad</center></th>
+                                    <th width="30%"><center>Fecha de Nacimiento</center></th>
+                                    <th width="30%"><center>Puesto en la Institución</center></th>
+
+                            </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input  id="edad" type="text" class="validate"/>
+                            </td>
+                            <td>
+                                <input  id="fechaNac" type="text" class="validate"/>
+                            </td>
+                            <td>
+                                <input  id="pstoInst" type="text" class="validate"/>
+                            </td>
+                        </tr>
+                    </tbody>
+
+              </table>
+                <br>
+
+                <center>
+                    <a class="waves-effect light-green btn-small " id="agregarAsignaturas">
+                        <i class="material-icons right">add</i>Agregar Filas
+                    </a>
+                </center>
+          </div>
+        </div>   
+      
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  </ul>
+  
+  <!-- Zona de Scripts -->
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/materialize.min.js"></script>
+    <script src="/js/awesomeAjax.js"></script>
+    <script src="/js/Cedula0.js"></script>
+    <!-- Necesario para inicilizar el select -->
+   
+</body>
+</html>

@@ -1,0 +1,36 @@
+spring:
+    datasource:
+  #      url: jdbc:sqlserver://localhost;databaseName=admin
+   #     username: sa
+    #    password: Im550123
+        url: jdbc:mysql://localhost:3306/admin
+        username: root
+        password: root
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+            naming:
+               physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+               # strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        properties:
+            hibernate:
+#                dialect: org.hibernate.dialect.SQLServer2012Dialect
+                dialect: org.hibernate.dialect.MySQL5Dialect
+    thymeleaf:
+        cache: false 
+        
+    mail:
+        default-encoding: UTF-8
+        host: smtp.gmail.com
+        username: sanetimss@gmail.com
+        password: Im550123
+        port: 587
+        properties:
+          mail:
+            smtp:
+              auth: true
+              starttls:
+                enable: true
+        protocol: smtp
+        test-connection: false

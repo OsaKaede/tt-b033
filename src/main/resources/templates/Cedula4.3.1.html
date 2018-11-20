@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"	/>
+	<!--Import Google Icon Font-->
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  	<!-- Compiled and minified JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	
+	<title>Cedula 4.3.1</title>
+	<style type="text/css">
+		.taling{
+			border:4px solid #3F9BA2;
+			padding-bottom: .5%;
+		}
+		.btnn{
+			color:#FBFDFD;
+		}
+		.fonfohead{
+			background: #10AE8F;
+			color:#075B52;
+			padding: .15%;
+		}
+		.hedFont{
+        		background: #2E4053;
+        	}
+                .tabTable{
+                    margin-left: 0.25% !important;
+                    
+                }
+                hr.style2 {
+	border-top: 3px double #8c8b8b;
+}
+	</style>
+</head>
+<body>
+	 <nav class="nav-extended">
+    <div class="nav-wrapper hedFont">
+      <a href="#!" class="brand-logo">Sireev</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a>Inicio</a></li>
+        <li><a>Acerca de</a></li>
+        <li><a>Cédulas</a></li>
+      </ul>
+    </div>
+    <div class="nav-content fonfohead">
+      <center><h5>Cédula 4.3.1 Valoración de los Índices de rendimiento escolar por cohorte</h5></center>
+      <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
+        <i class="material-icons">add</i>
+      </a> -->
+    </div>
+    <!--
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#test1">Test 1</a></li>
+        <li class="tab"><a class="active" href="#test2">Test 2</a></li>
+        <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
+        <li class="tab"><a href="#test4">Test 4</a></li>
+      </ul>
+    </div>-->
+  </nav>
+  <!-- termina header -->
+  <div class="container">
+  <div class="row">
+    
+      <div class="row">
+        <div class="input-field col s3  ">
+          <input  id="periodo" type="text" class="validate">
+          <label for="first_name">Periodicidad</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="numPeriodos" type="text" class="validate">
+          <label for="last_name">Número de periodos al año</label>
+        </div>
+        <div class="col s3 btnn">
+        	<br>
+        	<a class="waves-effect waves-light btn" id="botonSave"><i class="material-icons left">save</i>Guardar</a>
+        </div>
+        
+        <div class="col s3 btnn">
+             <br>
+            <a class="waves-effect waves-light btn"><i class="material-icons left">import_export</i>Generar Cédula</a>
+        </div>
+       
+          
+      </div>
+   
+  </div>
+  </div>
+  <!-- Formulario -->
+  <div class="row">
+    <div class="col s12 m12">
+       <div class="col s1 btnn right aling">
+            <a class="btn-floating btn-large waves-effect waves-light pink darken-3 btn" id="ayuda"><i class="material-icons center">help</i></a>
+        
+      </div>
+        <div class="col s1 btnn right aling">
+            <a class="btn-floating btn-large waves-effect waves-light amber btn" id="calcularPorcentajes"><i class="material-icons center">rate_review</i></a>
+        
+      </div>
+       
+    </div>
+  </div>
+  
+   
+  <hr class="style2">
+  	<table class="responsive-table striped">
+     	<thead>
+     		<tr>
+     			<th  width="9%" class="tooltipped" data-position="top" data-tooltip="Ejemplo: semestre, trimestre, cuatrimestre, etc.">Cohortes equivalentes a 5 años</th>
+     			<th width="11.37%" class="tooltipped" data-position="top" data-tooltip="(mes y año de inicio y mes y año de terminación). Ejemplo: 9/2010 - 7/2014">Periodo de la cohorte</th>
+     			<th width="11.37%">Número de estudiantes de la Cohorte</th>
+     			<th width="11.37%">Número de estudiantes que permanecen en el PE</th>
+                        <th width="11.37%" class="tooltipped" data-position="top" data-tooltip="Oprime el botón amarillo para completar este campo">% estudiantes que permanecen en el PE.</th>
+     			<th width="11.37%">Número de egresados de la cohorte</th>
+     			<th width="11.37%" class="tooltipped" data-position="top" data-tooltip="Considerar el tiempo máximo como 1.5 
+     			veces la duración oficial del PE.">Eficiencia terminal (egresaron / ingreso por cohorte). </th>
+     			<th width="11.37%">Número de titulados por cohorte</th>
+     			<th width="11.37%" class="tooltipped" data-position="top" data-tooltip="Oprime el botón amarillo para completar este campo">% titulación (titulados/ Ingreso por cohorte)</th>
+     		</tr>
+     	</thead>
+        <tbody id="valorIndices">
+        </tbody>
+      </table>
+  
+      <br>
+        <center>
+            <a class="waves-effect light-green btn-small " id="agregarTable">
+                <i class="material-icons right">add</i>Agregar Filas
+            </a>
+        </center>
+    <hr class="style2">
+    <br>
+    
+    <!-- TABLA ASIGNATURAS CON MAYOR ÍNDICE DE REPROBACIÓN-->
+    <div class="row">
+    <div class="col s12 m10">
+      <div class="card-panel indigo indigo darken-4">
+        <span class="white-text">
+                Asignaturas con mayor índice de reprobación
+        </span>
+      </div>
+        <table class="responsive-table striped">
+     	<thead>
+     		<tr>
+                    <th width="30%"><center>Asignatura</center></th>
+     			<th width="30%"><center>Ubicación (Semestre, cuatrimestre, etc.)</center></th>
+     			<th width="30%"><center>Periodo de impartición</center></th>
+     			<th width="10%"><center>Índices de Reprobación (%)</center></th>
+     			
+     		</tr>
+     	</thead>
+        <tbody id="tableAsiganturas">
+        </tbody>
+          
+      </table>
+        <br>
+        <center>
+            <a class="waves-effect light-green btn-small " id="agregarAsignaturas">
+                <i class="material-icons right">add</i>Agregar Filas
+            </a>
+        </center>
+    </div>
+  </div> 
+    <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Ayuda</h4>
+      <p>Recuerda que..</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+  </div>
+    
+  <!-- Zona de Scripts -->
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+<script src="/js/awesomeAjax.js"></script>
+<script src="/js/Cedula431.js"></script>
+
+</body>
+</html>

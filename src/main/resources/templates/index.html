@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+       
+        
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="/css/materialize.min.css"/>
+  	<!-- Compiled and minified JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  	 <title>Home</title>
+  	
+        <style>
+        	.hedFont{
+        		background: #2E4053;
+        	}
+        </style>
+
+    </head>
+	
+    <body>
+    	<!-- navi bar -->
+    	   <nav>
+		    <div class="nav-wrapper hedFont">
+		      <a href="#" class="brand-logo">Sireev</a>
+		      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		      <ul  class="right hide-on-med-and-down">
+		        <li><a class ="modal-trigger" href="#modal1" >Login</a></li>
+		        <li><a href="badges.html">Acerca de</a></li>
+		        <li><a href="collapsible.html">C�dulas</a></li>
+		      </ul>
+		    </div>
+		  </nav>
+		  
+		  <!-- MEnu responsive -->
+		   <ul class="sidenav" id="mobile-demo">
+		    <li><a class="modal-trigger" href="#modal1">Login</a></li>
+		    <li><a href="badges.html">Components</a></li>
+		    <li><a href="collapsible.html">Javascript</a></li>
+		    <li><a href="mobile.html">Mobile</a></li>
+		  </ul>
+		  
+		  <!-- Modal Login -->
+		  <div id="modal1" class="modal">
+		    <div class="modal-content">
+		      <h4>Ingresar</h4>
+		      <div class="row">
+			    <form class="col s12">
+			      <div class="row">
+			        <div class="input-field col s6">
+			          <i class="material-icons prefix">account_circle</i>
+			          <input id="icon_prefix" type="text" class="validate">
+			          <label for="icon_prefix">Usuario</label>
+			        </div>
+			        <div class="input-field col s6">
+			          <i class="material-icons prefix">lock_outline</i>
+			          <input id="icon_telephone" type="password" class="validate">
+			          <label for="icon_telephone">Contrasena</label>
+			        </div>
+			        
+			      </div>
+			    </form>
+  				</div>
+		    </div>
+		    <div class="modal-footer">
+		    	<button class="btn waves-effect waves-light" type="submit" name="action">Ingresar
+			   	 <i class="material-icons right">assignment</i>
+			 	 </button>
+			 	 &nbsp;&nbsp;&nbsp;
+			 	 
+		       <button class="btn waves-effect waves-light" type="submit" name="action" id="registrar">Registrar
+			    <i class="material-icons right">lock_open</i>
+			  </button>
+			  
+        
+		    </div>
+		  </div>
+        <!-- Contendor principal -->
+        
+               <div class="parallax-container">
+      				<div class="parallax"><img src="../../../images/parallax1.jpg"></div>
+    			</div>
+    			<div class="section white">
+				      <div class="row container">
+				        <h3 class="header">SIREEV</h3>
+				        <p class="grey-text text-darken-3 lighten-3">La acreditaci�n de un programa acad�mico, tanto de t�cnico superior universitario (TSU), como de nivel superior, es el reconocimiento p�blico que una organizaci�n acreditadora otorga, en el sentido de que �ste cumple con determinados criterios y par�metros de calidad. </p>
+				      </div>
+   				</div>
+			    <div class="parallax-container">
+			      <div class="parallax"><img src="../../images/parallax2.jpg"></div>
+			    </div>
+        
+    </body>
+    <!-- Zona de Scripts -->
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/materialize.min.js"></script>
+    <script src="/js/awesomeAjax.js"></script>
+    <script src="/js/admin.js"></script>
+    <!-- Necesario para inicilizar el select -->
+    <script type="text/javascript">
+    	$('.parallax').parallax();
+    	$('.sidenav').sidenav();
+    	$('.modal').modal();
+        $(document).on('click' , '#registrar' , function(){
+            alert("Comunicate con el administrador");
+	});
+    </script>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="/css/materialize.min.css"/>
+  	<!-- Compiled and minified JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  	
+	<title>Admin</title>
+	 <style>
+        	.hedFont{
+        		background: #2E4053;
+        	}
+        	.fonfohead{
+			background: #10AE8F;
+			color:#075B52;
+			padding: .15%;
+		}
+        </style>
+</head>
+<body>
+	<nav class="nav-extended">
+    <div class="nav-wrapper hedFont">
+      <a href="#!" class="brand-logo">Sireev</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a>Inicio</a></li>
+        <li><a>Acerca de</a></li>
+        <li><a>Cédulas</a></li>
+      </ul>
+    </div>
+    <div class="nav-content fonfohead">
+      <center><h5>Administrador</h5></center>
+    </div>	
+  </nav>
+  <!-- termina header -->
+	<div class="card">
+    <div class="card-content">
+      <p>Selecciona la operación que deseas realizar</p>
+    </div>
+    <div class="card-tabs">
+      <ul class="tabs tabs-fixed-width">
+        <li class="tab"><a class="active" href="#test4"><i class="material-icons right">portrait</i>Registrar Usuario</a></li>
+        <li class="tab"><a  href="#test5"><i class="material-icons right">search</i>Datos del Usuario</a></li>
+
+      </ul>
+    </div>
+    <div class="card-content grey lighten-4">
+    	<!-- inicio de formu -->
+      <form action="#" th:action="@{/Cedula/agregaUsuario}" th:object="${usuarioAux}" method="POST">
+      <div id="test4">
+			  <div class="row">
+			    <form class="col s12">
+			      <div class="row">
+			      	<div class="input-field col s4">
+			          <input placeholder="Nombre" id="first_name" type="text" th:field="*{Nombre}" class="validate">
+			          <label for="first_name">Nombre</label>
+			        </div>
+			        <div class="input-field col s4">
+			          <input placeholder="Apellido Paterno" id="first_name" type="text" th:field="*{ApelldioPaterno}"  class="validate">
+			          <label for="first_name">Apellido Paterno</label>
+			        </div>
+			        <div class="input-field col s4">
+			          <input placeholder="Apellido Materno" id="last_name" type="text" th:field="*{ApellidoMaterno}" class="validate">
+			          <label for="first_name">Apelldio Materno</label>
+			        </div>
+			      </div>
+			      <div class="row">
+			      	<div class="input-field col s4">
+			          <input placeholder="E-mail" id="e-mail" type="text" th:field="*{Email}" class="validate">
+			          <label for="first_name">E-mail</label>
+			        </div>
+			        <div class="input-field col s4">
+			          <input placeholder="Telefono" id="telefono" type="text" th:field="*{Telefono}" class="validate">
+			          <label for="first_name">Telefono</label>
+			        </div>
+			        <div class="input-field col s4">
+			         <select th:field="*{NombreRol}">
+				      <option value="" disabled selected>Selecciona el rol</option>
+				      <option th:each="usu : ${usuarios}" th:value="${usu.idRol}" th:text="${usu.Nombre}"></option>
+				    </select>
+				    <label>Rol</label>
+			        </div>
+			      </div>
+			       <div class="row">
+			      	<div class="input-field col s4">
+			          <input placeholder="Nombre de Usuario" id="usser" type="text" th:field="*{NombreUsuario}" class="validate">
+			          <label for="first_name">Nombre de Usuario</label>
+			        </div>
+			        <div class="input-field col s4">
+			          <input placeholder="Contrasena" id="password" type="password" th:field="*{contrasena}" class="validate">
+			          <label for="first_name">Contrasena</label>
+			        </div>
+			        <div class="input-field col s4">
+			          <button class="btn waves-effect waves-light" type="submit" name="action" id="registrar_us">Registrar
+			   			 <i class="material-icons right">assignment_ind</i>
+			  		</button>
+			      </div>
+			      </div>
+			       </form>
+			     </div>
+      </div>
+    </form>
+    <!-- fin del formu -->
+      <div id="test5">
+      		<form class="col s12" th:action="@{/rest/Admin/modificarUsuario}" th:object="${usuarioAux2}" method="POST">
+			      <div class="row">
+			      	<div class="input-field col s4">
+			          <input placeholder="Email" id="mail_bu" th:field="*{Email}" type="text" class="validate">
+			          <label for="first_name">Email</label>
+			        </div>
+			        <div class="input-field col s4 center-align">
+			         	 <a class="btn waves-effect waves-light"  id="buscar_us">Buscar
+			   			 <i class="material-icons right">find_replace</i>
+			  			</a>
+			        </div>
+			        <div class="input-field col s4 center-align" >
+			         	 <a class="btn waves-effect waves-light" disabled id="eliminar_us">Eliminar
+			   			 <i class="material-icons right">delete</i>
+			  			</a>
+			        </div>
+			      </div>
+			     <!--  datos desactivados -->
+			      <div class="row">
+			      	<div class="input-field col s4">
+			          <input placeholder="Nombre" id="nombre_bu" type="text" th:field="*{Nombre}" class="validate" disabled>
+			          <label for="first_name">Nombre</label>
+			        </div>
+			        <div class="input-field col s4">
+			          <input placeholder="Apellido Paterno" id="ap_bu" th:field="*{ApelldioPaterno}" type="text" class="validate" disabled>
+			          <label for="first_name">Apellido Paterno</label>
+			        </div>
+			        <div class="input-field col s4">
+			          <input placeholder="Apellido Materno"  th:field="*{ApellidoMaterno}" id="am_bu" type="text" class="validate" disabled>
+			          <label for="first_name">Apellido Materno</label>
+			        </div>
+			      </div>
+			      <div class="row">
+			      	<div class="input-field col s4">
+			          <input placeholder="ID" id="id_bu" disabled th:field="*{IdUsuario}" type="text" class="validate">
+			          <label for="first_name">ID</label>
+			        </div>
+			        <div class="input-field col s4">
+			          <input placeholder="Telefono" id="tel_bu" th:field="*{Telefono}"  type="text" class="validate" disabled>
+			          <label for="first_name">Telefono</label>
+			        </div>
+					<div class="input-field col s4">
+			         <select disabled id="rol_bu" th:field="*{NombreRol}">
+				      <option th:each="usu : ${usuarios}" th:value="${usu.idRol}" th:text="${usu.Nombre}"></option>
+				    </select>
+				    <label>Rol</label>
+			        </div>
+			      </div>
+			      <div class="row">
+			      	<div class="input-field col s3">
+			          <input placeholder="Nombre de Usuario" th:field="*{NombreUsuario}" id="usu_bu" type="text" class="validate" disabled>
+			          <label for="first_name">Nombre de Usuario</label>
+			        </div>
+			        <div class="input-field col s3">
+			          <input placeholder="Contrasena" th:field="*{contrasena}" id="contra_bu" type="text" class="validate" disabled>
+			          <label for="first_name">Contrasena</label>
+			        </div>
+			        <div class="input-field col s3 center-align ">
+			         	 <a class="btn waves-effect waves-light"  id="Habiitar_f">Habilitar	
+			   			 <!-- <i class="material-icons right">find_replace</i> -->
+			  			</a>
+			        </div>
+			        <div class="input-field col s3 center-align ">
+			         	 <button class="btn waves-effect waves-light" disabled type="submit" name="action" id="Actualizar_us">Actualizar
+			   			 <i class="material-icons right">assignment_ind</i>
+			  		</button>
+			        </div>
+			      </div>
+			   </form>
+      </div>
+
+  </div>	
+  </div>
+    <!-- Zona de Scripts -->
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/materialize.min.js"></script>
+    <script src="/js/awesomeAjax.js"></script>
+    <script src="/js/admin.js"></script>
+    <!-- Necesario para inicilizar el select -->
+    <script type="text/javascript">
+    $(document).ready(function(){
+    $('.tabs').tabs();
+    $('select').formSelect();
+    });
+    </script>
+</body>
+</html>

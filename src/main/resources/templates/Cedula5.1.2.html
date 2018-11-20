@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"	/>
+
+	<!--Import Google Icon Font-->
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>Cedula 5.1.2</title>
+	<style type="text/css">
+		.taling{
+			border:4px solid #3F9BA2;
+			padding-bottom: .5%;
+		}
+		.btnn{
+			color:#FBFDFD;
+		}
+		.fonfohead{
+			background: #10AE8F;
+			color:#075B52;
+			padding: .15%;
+		}
+			.hedFont{
+        		background: #2E4053;
+        	}
+	</style>
+	
+</head>
+<body>
+	 <nav class="nav-extended">
+    <div class="nav-wrapper hedFont">
+      <a href="#!" class="brand-logo">Sireev</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a>Inicio</a></li>
+        <li><a>Acerca de</a></li>
+        <li><a>Cédulas</a></li>
+      </ul>
+    </div>
+    <div class="nav-content fonfohead">
+      <center><h5>Cédula 5.1.2</h5></center>
+    </div>
+  </nav>
+  <!-- termina header -->
+  <div class="container center aling">
+      <div class="row">
+        <div class="input-field col s4 left-align">
+          <i class="material-icons prefix">mode_edit</i>
+            <input  type="text" id="nombreLab" class="validate">
+          <label for="icon_prefix" >Nombre de Laboratorio</label>
+        </div>
+        <div class="col s3 center-align">
+        	<br>
+        	<a id="botonSave" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</a>
+        </div>
+          <div class="col s3 btnn">
+             <br>
+            <a class="waves-effect waves-light btn" id="generarXLS"><i class="material-icons left">import_export</i>Generar Cédula</a>
+        </div>
+        <div class="col s2 right-align">
+          <br>
+          <a class="waves-effect waves-light btn modal-trigger" href="#modal1" ><i class="material-icons">list</i>Lista</a>
+        </div>
+      </div>
+  </div>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Lista de Equipos por Laboratorio</h4>
+      <!-- inicio de tabla dinamica! -->
+      <div class="row">
+      <div class="input-field col s6 left-align">
+          <select id="laboSelec">
+              <option th:each="obj : ${laboratorios}" th:value="${obj.idDatosLaboratorio}" th:text="${obj.nombreLab}"></option>
+          </select>
+      <label>Laboratorio</label>
+    </div>
+    </div>
+    <table>
+    <thead>
+      <tr>
+        <th>Nombre Equipo</th>
+        <th>Cantidad</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="cuerpoTabla">
+      
+    </tbody>
+  </table>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar!</a>
+    </div>
+  </div>
+
+  <!-- Formulario -->
+  <div class="container center aling taling">
+  	<table class="responsive-table" >
+     	<thead>
+     		<tr>
+     			<th>N°</th>
+     			<th>Equipo principal del laboratorio</th>
+     			<th>Cantidad</th>
+     		</tr>
+     	</thead>
+        <tbody id="Eq_principal">
+
+        </tbody>
+      </table>
+      <br>
+      	<button class="btn waves-effect waves-light" type="submit" name="action" id="agregar">Agregar
+   			 <i class="material-icons right">add</i>
+  		</button>
+      	
+      
+  </div>
+ 
+</body>
+<!-- Zona de Scripts -->
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+<script src="/js/awesomeAjax.js"></script>
+<script src="/js/Cedula512.js"></script>
+<script>
+var equipoReg=1;
+  $(document).on('click' , '#agregar' , function(){
+    //alert("Funciona");
+    $("#Eq_principal").append(
+        " <tr> " +
+               "<td ><center><b>"+equipoReg+"</b></center></td>"+
+                "<td>"+
+               "<div class='input-field col s6'>"+
+               "<input placeholder='Equipo Principal' id='nombre"+equipoReg+"' type='text' class='validate'>"+
+                 "</div>"+
+            "</td>"+
+            "<td>"+
+            "<div class='input-field col s3'>"+
+               "<input placeholder='Cantidad' id='cantidad"+equipoReg+"' type='text' class='validate'>"+
+               "</div>"+
+            "</td>"+
+              "</tr>"
+
+    );
+    equipoReg++;
+  }); 
+  </script>
+<script type="text/javascript">
+  $(document).ready(function(){
+   $('.modal').modal();
+   $('select').formSelect();
+  });
+</script>
+</html>

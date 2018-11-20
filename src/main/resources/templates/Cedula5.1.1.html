@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"	/>
+	<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+	<!--Import Google Icon Font-->
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  	<!-- Compiled and minified JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<title>Cedula 5.1.1</title>
+	<style type="text/css">
+		.taling{
+			border:4px solid #3F9BA2;
+		}
+		.btnn{
+			color:#FBFDFD;
+		}
+		.fonfohead{
+			background: #10AE8F;
+			color:#075B52;
+			padding: .15%;
+		}
+		.hedFont{
+        		background: #2E4053;
+        	}
+        
+	</style>
+</head>
+<body>
+	 <nav class="nav-extended">
+    <div class="nav-wrapper hedFont">
+      <a href="#!" class="brand-logo">Sireev</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a>Inicio</a></li>
+        <li><a>Acerca de</a></li>
+        <li><a>Cédulas</a></li>
+      </ul>
+    </div>
+    <div class="nav-content fonfohead">
+      <center><h5>Cédula 5.1.1 - Características de las aulas</h5></center>
+      <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
+        <i class="material-icons">add</i>
+      </a> -->
+    </div>
+    <!--
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#test1">Test 1</a></li>
+        <li class="tab"><a class="active" href="#test2">Test 2</a></li>
+        <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
+        <li class="tab"><a href="#test4">Test 4</a></li>
+      </ul>
+    </div>-->
+  </nav>
+  <!-- termina header -->
+  <div class="container center aling">
+  <div class="row">
+      
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">mode_edit</i>
+            <input id="tipoAula" type="text" class="validate">
+          <label for="icon_prefix">Tipo de Aula</label>
+        </div>
+          
+        <div class="col s3 btnn">
+        	<br>
+        	<a id="botonSave" onclick="enviarRadios()" class="waves-effect waves-light btn"><i class="material-icons left">save</i>Guardar</a>
+        </div>
+        <div class="col s3 btnn">
+             <br>
+            <a class="waves-effect waves-light btn"><i class="material-icons left">import_export</i>Generar Cédula</a>
+        </div>
+      </div>
+
+  </div>
+  </div>
+  <!-- Formulario -->
+  <div class="container center aling taling">
+  	<table class="responsive-table">
+     
+        <tbody>
+          <tr>
+            <td>a. Suficiencia</td>
+            <td>
+	             <p>
+		      <label>
+		      	 
+		       <input class="with-gap" name="group1" type="radio" value="Si" />
+		        <span>Si</span>
+		      </label>
+		       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;
+		       <label>
+		      	 
+		        <input class="with-gap" name="group1" type="radio" value="No" />
+		        <span>No</span>
+		      </label>
+		    </p>
+	    	</td>
+          </tr>
+          <tr>
+             <td>b. Iluminación</td>
+            <td>
+	             <p>
+		      <label>
+		      	 
+		        <input class="with-gap" name="group2" type="radio" value="Adecuada" />
+		        <span>Adecuada</span>
+		      </label>
+		       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;
+		       <label>
+		      	 
+		        <input class="with-gap" name="group2" type="radio"  value="Inadecuada"/>
+		        <span>Inadecuada</span>
+		      </label>
+		    </p>
+	    	</td>
+          </tr>
+          <tr>
+            <td>c. Ventilación</td>
+            <td>
+	             <p>
+		      <label>
+		      	 
+		        <input class="with-gap" name="group3" type="radio"  value="Adecuada"/>
+		        <span>Adecuada</span>
+		      </label>
+		       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;
+		       <label>
+		      	 
+		        <input class="with-gap" name="group3" type="radio"  value="Inadecuada"/>
+		        <span>Inadecuada</span>
+		      </label>
+		    </p>
+	    	</td>
+          </tr>
+          <tr>
+           <td>d. Aislamiento del ruido</td>
+            <td>
+	             <p>
+		      <label>
+		      	 
+		        <input class="with-gap" name="group4" type="radio"  value="Adecuada"  />
+		        <span>Adecuada</span>
+		      </label>
+		       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;
+		       <label>
+		      	 
+		        <input class="with-gap" name="group4" type="radio"   value="Inadecuada"/>
+		        <span>Inadecuada</span>
+		      </label>
+		    </p>
+	    	</td>
+          </tr>
+          <tr>
+          	 <td>e. Equipo Audiovisual</td>
+            <td>
+	             <p>
+		      <label>
+		      	 
+		        <input class="with-gap" name="group5" type="radio" value="Adecuada" />
+		        <span>Adecuada</span>
+		      </label>
+		       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;
+		       <label>
+		      	 
+		       <input class="with-gap" name="group5" type="radio" value="Inadecuada" />
+		        <span>Inadecuada</span>
+		      </label>
+		    </p>
+	    	</td>
+          </tr>
+          <tr>
+           <td>f. Mobiliario</td>
+            <td>
+	             <p>
+		      <label>
+		      	 
+		        <input class="with-gap" name="group6" type="radio"  />
+		        <span>Adecuada</span>
+		      </label>
+		       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;
+		       <label>
+		      	 
+		        <input class="with-gap" name="group6" type="radio"  />
+		        <span>Inadecuada</span>
+		      </label>
+		    </p>
+	    	</td>
+          </tr>
+          <tr>
+          	 <td>g. Accesibilidad</td>
+            <td>
+	             <p>
+		      <label>
+		      	 
+		        <input class="with-gap" name="group7" type="radio"  />
+		        <span>Adecuada</span>
+		      </label>
+		       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;
+		       <label>
+		      	 
+		         <input class="with-gap" name="group7" type="radio"  />
+		        <span>Inadecuada</span>
+		      </label>
+		    </p>
+	    	</td>
+          </tr>
+          <tr>
+            <td>h. Conectividad</td>
+            <td>
+	             <p>
+		      <label>
+		      	 
+		         <input class="with-gap" name="group8" type="radio"  />
+		        <span>Adecuada</span>
+		      </label>
+		       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;
+		       <label>
+		      	 
+		         <input class="with-gap" name="group8" type="radio"  />
+		        <span>Inadecuada</span>
+		      </label>
+		    </p>
+	    	</td>
+          </tr>
+          <tr>
+          	<td>i. Higiene</td>
+            <td>
+	             <p>
+		      <label>
+		      	 
+		         <input class="with-gap" name="group9" type="radio"  />
+		        <span>Adecuada</span>
+		      </label>
+		       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;
+		       <label>
+		      	 
+		         <input class="with-gap" name="group9" type="radio"  />
+		        <span>Inadecuada</span>
+		      </label>
+		      
+		    </p>
+	    	</td>
+          </tr>
+          
+        </tbody>
+      </table>
+  </div>
+<!-- Zona de Scripts -->
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+<script src="/js/awesomeAjax.js"></script>
+<script src="/js/Cedula511.js"></script> 
+</body>
+</html>

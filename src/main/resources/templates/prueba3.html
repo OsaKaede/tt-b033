@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>nombre</th>
+				<th>Ap</th>
+				<th>Am</th>
+				<th>Email</th>
+				<th>Telefono</th>  
+				<th>Id2</th>  
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="juga:${usuarios}">
+				<th><span th:text=${juga.idDatosUsuario}	></span></th>
+				<th><span th:text=${juga.Nombre}></span></th>
+				<th><span th:text=${juga.ApelldioPaterno}></span></th>
+				<th><span th:text=${juga.ApellidoMaterno}></span></th>
+				<th><span th:text=${juga.Email}></span></th>
+				<th><span th:text=${juga.Telefono}></span></th>
+				<th><span th:text=${juga.getUsuario().getIdUsuario()}></span></th>
+				<!-- <td><a href="#" th:href="@{/inicio/elimina/{id}(id=${juga.id})}">Borrar</a></td>
+				<td><a href="#" th:href="@{/inicio/modifica/{id}(id=${juga.id})}">Borrar</a></td> -->
+			</tr>
+		</tbody>
+	</table>
+
+
+	<!-- <form action="#" th:action="@{/inicio/agregajugador}" th:object="${jugador}" method="POST">
+            <p><input type="hidden" th:field="*{id}"/></p>
+			<p>NOMBRE: <input type="text" th:field="*{nombre}"/></p>
+			<p>EQUIPO: <input type="text" th:field="*{equipo}"/></p>
+			<p>POSICION: <input type="text" th:field="*{posicion}"/></p>
+			<p>DORSAL: <input type="text" th:field="*{dorsal}"/></p>
+			<p>GOLES: <input type="text" th:field="*{goles}"/></p>
+			<p><input type="submit" value="Go for it..."/></p>
+			<p><input type="reset" value="Clean that"/></p>
+	</form> -->
+
+
+
+</body>
+</html>
